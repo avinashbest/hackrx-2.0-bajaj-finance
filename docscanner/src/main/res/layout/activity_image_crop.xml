@@ -78,7 +78,7 @@
                     android:adjustViewBounds="true" />
             </FrameLayout>
 
-            <com.aviza.docscanner.ImageCropActivity.libraries.PolygonView
+            <com.aviza.docscanner.libraries.PolygonView
                 android:id="@+id/polygonView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
