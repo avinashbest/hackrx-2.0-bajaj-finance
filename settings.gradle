@@ -1,0 +1,4 @@
+rootProject.name = "finserv"
+include ':app'
+include ':openCVLibrary'
+include ':docscanner'
