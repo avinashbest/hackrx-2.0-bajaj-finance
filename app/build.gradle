@@ -34,6 +34,8 @@ android {
 
 dependencies {
 
+    implementation project(':docscanner')
+
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.6.0'
     implementation 'androidx.appcompat:appcompat:1.3.0'
@@ -44,5 +46,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation project(':docscanner')
+
+    implementation "androidx.cardview:cardview:1.0.0"
+
 }

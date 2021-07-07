@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context=".HomeActivity">
+
+    <ImageView
+        android:id="@+id/profile"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="16dp"
+        android:src="@drawable/account_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0" />
+
+    <ImageView
+        android:id="@+id/bajajFinservLogo"
+        android:layout_width="160dp"
+        android:layout_height="48dp"
+        android:layout_margin="16dp"
+        android:src="@drawable/bajaj_finserv_logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_1"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:cardBackgroundColor="@color/teal_200"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bajajFinservLogo">
+
+        <TextView
+            android:id="@+id/currentAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_margin="16dp"
+            android:text="₹ 10,000.00"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:layout_marginLeft="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="View Balance Details >"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:layout_width="176dp"
+            android:layout_height="64dp"
+            android:layout_gravity="bottom|start"
+            android:layout_margin="8dp"
+            android:backgroundTint="@color/purple_700"
+            android:text="Pay to Merchant"
+            android:textSize="12sp" />
+
+        <Button
+            android:layout_width="176dp"
+            android:layout_height="64dp"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="8dp"
+            android:backgroundTint="@color/purple_700"
+            android:text="Transfer Money"
+            android:textSize="12sp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_2"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        app:cardBackgroundColor="#084c91"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_1" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_3"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        app:cardBackgroundColor="#00c5ff"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_2" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="64dp"
+        app:cardBackgroundColor="#eeeeee"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_3">
+
+        <GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:columnCount="4"
+            android:rowCount="2">
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="@color/teal_200" />
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="@color/teal_200" />
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="@color/teal_200" />
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="@color/teal_200" />
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="@color/teal_200" />
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="@color/teal_200" />
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="@color/teal_200" />
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="@color/teal_200" />
+
+        </GridLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

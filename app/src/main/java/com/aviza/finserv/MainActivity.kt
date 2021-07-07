@@ -104,7 +104,7 @@ class MainActivity : AppCompatActivity() {
     private fun setView() {
         btnPick.setOnClickListener {
             val builder = AlertDialog.Builder(this)
-            builder.setTitle("Carbon")
+            builder.setTitle("Select Document")
             builder.setMessage("Where would you like to choose the image ?")
             builder.setPositiveButton("Gallery") { dialog, _ ->
                 dialog.dismiss()
