@@ -41,7 +41,8 @@ public class ImageCropActivity extends DocumentScanActivity {
     private boolean isInverted;
     private ProgressBar progressBar;
     private Bitmap cropImage;
-    private OnClickListener btnImageEnhanceClick = new OnClickListener() {
+
+    private final OnClickListener btnImageEnhanceClick = new OnClickListener() {
         @Override
         public void onClick(View v) {
             showProgressBar();
@@ -67,13 +68,15 @@ public class ImageCropActivity extends DocumentScanActivity {
             );
         }
     };
-    private OnClickListener btnRebase = v -> {
+
+    private final OnClickListener btnRebase = v -> {
         cropImage = ScannerConstants.selectedImageBitmap.copy(ScannerConstants.selectedImageBitmap.getConfig(), true);
         isInverted = false;
         startCropping();
     };
-    private OnClickListener btnCloseClick = v -> finish();
-    private OnClickListener btnInvertColor = new OnClickListener() {
+
+    private final OnClickListener btnCloseClick = v -> finish();
+    private final OnClickListener btnInvertColor = new OnClickListener() {
         @Override
         public void onClick(View v) {
             showProgressBar();
@@ -92,7 +95,8 @@ public class ImageCropActivity extends DocumentScanActivity {
             );
         }
     };
-    private OnClickListener onRotateClick = new OnClickListener() {
+
+    private final OnClickListener onRotateClick = new OnClickListener() {
         @Override
         public void onClick(View v) {
             showProgressBar();
@@ -158,10 +162,8 @@ public class ImageCropActivity extends DocumentScanActivity {
 
     @Override
     protected void showError(CropperErrorType errorType) {
-        switch (errorType) {
-            case CROP_ERROR:
-                Toast.makeText(this, ScannerConstants.cropError, Toast.LENGTH_LONG).show();
-                break;
+        if (errorType == CropperErrorType.CROP_ERROR) {
+            Toast.makeText(this, ScannerConstants.cropError, Toast.LENGTH_LONG).show();
         }
     }
 
@@ -221,7 +223,7 @@ public class ImageCropActivity extends DocumentScanActivity {
         isInverted = !isInverted;
     }
 
-    private String saveToInternalStorage(Bitmap bitmapImage) {
+    private void saveToInternalStorage(Bitmap bitmapImage) {
         File directory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(new Date());
         String imageFileName = "cropped_" + timeStamp + ".png";
@@ -239,6 +241,6 @@ public class ImageCropActivity extends DocumentScanActivity {
                 e.printStackTrace();
             }
         }
-        return directory.getAbsolutePath();
+        directory.getAbsolutePath();
     }
 }
