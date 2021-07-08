@@ -10,6 +10,7 @@ import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
+import android.os.StrictMode
 import android.provider.MediaStore
 import android.text.TextUtils
 import android.util.Log
@@ -78,6 +79,8 @@ class KYCVerificationActivity : AppCompatActivity() {
                     Log.i("KYCVerification", e.message.toString())
                 }
                 if (photoFile != null) {
+                    val builder = StrictMode.VmPolicy.Builder()
+                    StrictMode.setVmPolicy(builder.build())
                     cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(photoFile))
                     startActivityForResult(cameraIntent, 1231)
                 }
