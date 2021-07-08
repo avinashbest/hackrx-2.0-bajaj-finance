@@ -64,30 +64,40 @@
             android:textStyle="bold" />
 
         <Button
+            android:layout_width="56dp"
+            android:layout_height="48dp"
+            android:layout_gravity="end"
+            android:layout_margin="8dp"
+            android:text="+₹"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/payToMerchant"
             android:layout_width="176dp"
             android:layout_height="64dp"
             android:layout_gravity="bottom|start"
             android:layout_margin="8dp"
-            android:backgroundTint="@color/purple_700"
+            android:drawableLeft="@drawable/pay_to_merchant"
             android:text="Pay to Merchant"
-            android:textSize="12sp" />
+            android:textSize="11sp" />
 
         <Button
+            android:id="@+id/transferMoney"
             android:layout_width="176dp"
             android:layout_height="64dp"
             android:layout_gravity="bottom|end"
             android:layout_margin="8dp"
-            android:backgroundTint="@color/purple_700"
+            android:drawableLeft="@drawable/transfer_money"
             android:text="Transfer Money"
-            android:textSize="12sp" />
+            android:textSize="11sp" />
 
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_2"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        app:cardBackgroundColor="#084c91"
+        android:layout_height="120dp"
+        app:cardBackgroundColor="@color/orange"
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
         app:cardPreventCornerOverlap="true"
@@ -95,13 +105,36 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/card_1" />
+        app:layout_constraintTop_toBottomOf="@id/card_1">
+
+        <TextView
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|start"
+            android:layout_margin="16dp"
+            android:text="Complete your KYC in 30 seconds for uninterrupted EMIs."
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+
+        <Button
+            android:id="@+id/kycButton"
+            android:layout_width="88dp"
+            android:layout_height="64dp"
+            android:layout_gravity="end|center"
+            android:layout_margin="8dp"
+            android:backgroundTint="@color/purple_700"
+            android:text="Verify"
+            android:textSize="12sp" />
+
+
+    </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/card_3"
+        android:id="@+id/avizaQuotation"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        app:cardBackgroundColor="#00c5ff"
+        app:cardBackgroundColor="@color/bottom_background_color"
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
         app:cardPreventCornerOverlap="true"
@@ -109,12 +142,24 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/card_2" />
+        app:layout_constraintTop_toBottomOf="@id/services">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:text="Made with Love by Team: Aviza"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginBottom="64dp"
+        android:id="@+id/services"
+        android:layout_width="0dp"
+        android:layout_height="230dp"
         app:cardBackgroundColor="#eeeeee"
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
@@ -124,7 +169,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/card_3">
+        app:layout_constraintTop_toBottomOf="@id/card_2"
+        app:layout_constraintVertical_bias="0">
 
         <GridLayout
             android:id="@+id/gridLayout"
@@ -133,72 +179,131 @@
             android:columnCount="4"
             android:rowCount="2">
 
-            <ImageButton
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_rowWeight="1"
+                android:layout_rowWeight="2"
                 android:layout_columnWeight="1"
-                android:layout_margin="8dp"
-                android:background="@color/teal_200" />
+                android:layout_margin="16dp"
+                android:backgroundTint="@color/purple_200"
+                app:cornerRadius="@dimen/polygonViewCircleWidth"
+                app:icon="@drawable/phone_icon"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:iconSize="40dp" />
 
-            <ImageButton
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_rowWeight="1"
+                android:layout_rowWeight="2"
                 android:layout_columnWeight="1"
-                android:layout_margin="8dp"
-                android:background="@color/teal_200" />
+                android:layout_margin="16dp"
+                android:backgroundTint="@color/purple_200"
+                app:cornerRadius="@dimen/polygonViewCircleWidth"
+                app:icon="@drawable/business_icon"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:iconSize="40dp" />
 
-            <ImageButton
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_rowWeight="1"
+                android:layout_rowWeight="2"
                 android:layout_columnWeight="1"
-                android:layout_margin="8dp"
-                android:background="@color/teal_200" />
+                android:layout_margin="16dp"
+                android:backgroundTint="@color/purple_200"
+                app:cornerRadius="@dimen/polygonViewCircleWidth"
+                app:icon="@drawable/car_icon"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:iconSize="40dp" />
 
-            <ImageButton
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_rowWeight="1"
+                android:layout_rowWeight="2"
                 android:layout_columnWeight="1"
-                android:layout_margin="8dp"
-                android:background="@color/teal_200" />
+                android:layout_margin="16dp"
+                android:backgroundTint="@color/purple_200"
+                app:cornerRadius="@dimen/polygonViewCircleWidth"
+                app:icon="@drawable/train_icon"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:iconSize="40dp" />
 
-            <ImageButton
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_rowWeight="1"
+                android:layout_rowWeight="2"
                 android:layout_columnWeight="1"
-                android:layout_margin="8dp"
-                android:background="@color/teal_200" />
+                android:layout_margin="16dp"
+                android:backgroundTint="@color/purple_200"
+                app:cornerRadius="@dimen/polygonViewCircleWidth"
+                app:icon="@drawable/flight_icon"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:iconSize="40dp" />
 
-            <ImageButton
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_rowWeight="1"
+                android:layout_rowWeight="2"
                 android:layout_columnWeight="1"
-                android:layout_margin="8dp"
-                android:background="@color/teal_200" />
+                android:layout_margin="16dp"
+                android:backgroundTint="@color/purple_200"
+                app:cornerRadius="@dimen/polygonViewCircleWidth"
+                app:icon="@drawable/work_icon"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:iconSize="40dp" />
 
-            <ImageButton
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_rowWeight="1"
+                android:layout_rowWeight="2"
                 android:layout_columnWeight="1"
-                android:layout_margin="8dp"
-                android:background="@color/teal_200" />
+                android:layout_margin="16dp"
+                android:backgroundTint="@color/purple_200"
+                app:cornerRadius="@dimen/polygonViewCircleWidth"
+                app:icon="@drawable/bike_icon"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:iconSize="40dp" />
 
-            <ImageButton
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_rowWeight="1"
+                android:layout_rowWeight="2"
                 android:layout_columnWeight="1"
-                android:layout_margin="8dp"
-                android:background="@color/teal_200" />
+                android:layout_margin="16dp"
+                android:backgroundTint="@color/purple_200"
+                android:text="+9"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:cornerRadius="@dimen/polygonViewCircleWidth"
+                app:iconGravity="textStart" />
 
         </GridLayout>
 
     </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationMenu"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        app:elevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
