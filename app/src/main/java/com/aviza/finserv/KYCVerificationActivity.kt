@@ -76,7 +76,7 @@ class KYCVerificationActivity : AppCompatActivity() {
                 try {
                     photoFile = createImageFile()
                 } catch (e: IOException) {
-                    Log.i("KYCVerification", e.message.toString())
+                    Log.i("Main", "IOException")
                 }
                 if (photoFile != null) {
                     val builder = StrictMode.VmPolicy.Builder()

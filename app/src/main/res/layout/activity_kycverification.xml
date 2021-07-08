@@ -23,7 +23,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="24dp">
+            android:layout_margin="16dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -97,10 +97,11 @@
                 android:id="@+id/information"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="16dp"
                 android:text="Please Attach, Scanned Aadhaar Card"
                 android:textAlignment="center"
-                android:textSize="24sp"
+                android:textSize="16sp"
+                android:textStyle="bold"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/phoneNumberInput" />
@@ -127,6 +128,7 @@
                 android:drawableLeft="@drawable/gallery_icon"
                 android:padding="16dp"
                 android:text="Gallery"
+                app:layout_constraintBottom_toTopOf="@id/cameraButton"
                 app:layout_constraintLeft_toRightOf="@id/imgBitmap"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/information" />
@@ -148,6 +150,7 @@
                 android:id="@+id/doneButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="32dp"
                 android:backgroundTint="#F44336"
                 android:padding="16dp"
                 android:text="Done"
