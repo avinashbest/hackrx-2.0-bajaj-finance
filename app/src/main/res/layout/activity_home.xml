@@ -127,7 +127,6 @@
             android:text="Verify"
             android:textSize="12sp" />
 
-
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
