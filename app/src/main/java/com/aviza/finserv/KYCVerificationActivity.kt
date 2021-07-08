@@ -8,21 +8,18 @@ import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
-import android.os.StrictMode
 import android.provider.MediaStore
+import android.text.TextUtils
 import android.util.Log
-import android.view.View
-import android.widget.Button
-import android.widget.ImageView
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.aviza.docscanner.ImageCropActivity
 import com.aviza.docscanner.helpers.ScannerConstants
+import kotlinx.android.synthetic.main.activity_kycverification.*
 import java.io.File
 import java.io.IOException
 import java.text.SimpleDateFormat
@@ -30,16 +27,11 @@ import java.util.*
 
 class KYCVerificationActivity : AppCompatActivity() {
 
-    private lateinit var btnPick: Button
-    private lateinit var imgBitmap: ImageView
     private lateinit var mCurrentPhotoPath: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kycverification)
-
-        btnPick = findViewById(R.id.cameraButton)
-        imgBitmap = findViewById(R.id.scannedBitmap)
         askPermission()
     }
 
@@ -70,39 +62,42 @@ class KYCVerificationActivity : AppCompatActivity() {
     }
 
     private fun setView() {
-        btnPick.setOnClickListener {
-            val builder = AlertDialog.Builder(this)
-            builder.setTitle("Select Document")
-            builder.setMessage("Where would you like to choose the image ?")
-            builder.setPositiveButton("Gallery") { dialog, _ ->
-                dialog.dismiss()
-                val intent = Intent(Intent.ACTION_PICK)
-                intent.type = "image/*"
-                startActivityForResult(intent, 1111)
-            }
-            builder.setNegativeButton("Camera") { dialog, _ ->
-                dialog.dismiss()
-                val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-                if (cameraIntent.resolveActivity(packageManager) != null) {
-                    var photoFile: File? = null
-                    try {
-                        photoFile = createImageFile()
-                    } catch (ex: IOException) {
-                        Log.i("Main", "IOException")
-                    }
-                    if (photoFile != null) {
-                        val builder = StrictMode.VmPolicy.Builder()
-                        StrictMode.setVmPolicy(builder.build())
-                        cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(photoFile))
-                        startActivityForResult(cameraIntent, 1231)
-                    }
+        galleryButton.setOnClickListener {
+            val intent = Intent(Intent.ACTION_PICK)
+            intent.type = "image/*"
+            startActivityForResult(intent, 1111)
+        }
+
+        cameraButton.setOnClickListener {
+            val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            if (cameraIntent.resolveActivity(packageManager) != null) {
+                var photoFile: File? = null
+                try {
+                    photoFile = createImageFile()
+                } catch (e: IOException) {
+                    Log.i("KYCVerification", e.message.toString())
+                }
+                if (photoFile != null) {
+                    cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(photoFile))
+                    startActivityForResult(cameraIntent, 1231)
                 }
             }
-            builder.setNeutralButton("Cancel") { dialog, _ ->
-                dialog.dismiss()
+        }
+
+        doneButton.setOnClickListener {
+            if (TextUtils.isEmpty(firstNameInput.text.toString()) || TextUtils.isEmpty(lastNameInput.text.toString()) || TextUtils.isEmpty(
+                    aadharNumberInput.text.toString()
+                ) || TextUtils.isEmpty(phoneNumberInput.text.toString()) || TextUtils.isEmpty(
+                    addressInput.text.toString()
+                )
+            ) {
+                Toast.makeText(this, "Credentials can't be empty", Toast.LENGTH_LONG).show()
+                return@setOnClickListener
             }
-            val dialog: AlertDialog = builder.create()
-            dialog.show()
+
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 
@@ -111,11 +106,11 @@ class KYCVerificationActivity : AppCompatActivity() {
 
         if (requestCode == 1111 && resultCode == Activity.RESULT_OK && data != null) {
             val selectedImage = data.data
-            var btimap: Bitmap? = null
+            var bitmap: Bitmap? = null
             try {
                 val inputStream = selectedImage?.let { contentResolver.openInputStream(it) }
-                btimap = BitmapFactory.decodeStream(inputStream)
-                ScannerConstants.selectedImageBitmap = btimap
+                bitmap = BitmapFactory.decodeStream(inputStream)
+                ScannerConstants.selectedImageBitmap = bitmap
                 startActivityForResult(
                     Intent(this, ImageCropActivity::class.java),
                     1234
@@ -132,8 +127,6 @@ class KYCVerificationActivity : AppCompatActivity() {
         } else if (requestCode == 1234 && resultCode == Activity.RESULT_OK) {
             if (ScannerConstants.selectedImageBitmap != null) {
                 imgBitmap.setImageBitmap(ScannerConstants.selectedImageBitmap)
-                imgBitmap.visibility = View.VISIBLE
-                btnPick.visibility = View.GONE
             } else {
                 Toast.makeText(this, "Not OK", Toast.LENGTH_LONG).show()
             }

@@ -33,7 +33,7 @@
         android:id="@+id/card_1"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        app:cardBackgroundColor="@color/teal_200"
+        app:cardBackgroundColor="#3b3a30"
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
         app:cardPreventCornerOverlap="true"
@@ -49,6 +49,7 @@
             android:layout_gravity="start"
             android:layout_margin="16dp"
             android:text="₹ 10,000.00"
+            android:textColor="@color/white"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -60,6 +61,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginBottom="16dp"
             android:text="View Balance Details >"
+            android:textColor="@color/white"
             android:textSize="16sp"
             android:textStyle="bold" />
 
@@ -68,6 +70,7 @@
             android:layout_height="48dp"
             android:layout_gravity="end"
             android:layout_margin="8dp"
+            android:backgroundTint="#191919"
             android:text="+₹"
             android:textSize="16sp" />
 
@@ -77,6 +80,7 @@
             android:layout_height="64dp"
             android:layout_gravity="bottom|start"
             android:layout_margin="8dp"
+            android:backgroundTint="#26C2E3"
             android:drawableLeft="@drawable/pay_to_merchant"
             android:text="Pay to Merchant"
             android:textSize="11sp" />
@@ -87,6 +91,7 @@
             android:layout_height="64dp"
             android:layout_gravity="bottom|end"
             android:layout_margin="8dp"
+            android:backgroundTint="#26C2E3"
             android:drawableLeft="@drawable/transfer_money"
             android:text="Transfer Money"
             android:textSize="11sp" />
@@ -285,7 +290,7 @@
                 android:layout_margin="16dp"
                 android:backgroundTint="@color/purple_200"
                 android:text="+9"
-                android:textSize="16sp"
+                android:textSize="12sp"
                 android:textStyle="bold"
                 app:cornerRadius="@dimen/polygonViewCircleWidth"
                 app:iconGravity="textStart" />
