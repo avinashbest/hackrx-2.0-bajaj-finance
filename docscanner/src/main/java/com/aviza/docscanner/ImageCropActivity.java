@@ -189,16 +189,12 @@ public class ImageCropActivity extends DocumentScanActivity {
         ImageView ivRotate = findViewById(R.id.ivRotate);
         ImageView ivInvert = findViewById(R.id.ivInvert);
         ImageView ivRebase = findViewById(R.id.ivRebase);
-        btnImageCrop.setText(ScannerConstants.cropText);
-        btnClose.setText(ScannerConstants.backText);
         polygonView = findViewById(R.id.polygonView);
         progressBar = findViewById(R.id.progressBar);
         if (progressBar.getIndeterminateDrawable() != null && ScannerConstants.progressColor != null)
             progressBar.getIndeterminateDrawable().setColorFilter(Color.parseColor(ScannerConstants.progressColor), android.graphics.PorterDuff.Mode.MULTIPLY);
         else if (progressBar.getProgressDrawable() != null && ScannerConstants.progressColor != null)
             progressBar.getProgressDrawable().setColorFilter(Color.parseColor(ScannerConstants.progressColor), android.graphics.PorterDuff.Mode.MULTIPLY);
-        btnImageCrop.setBackgroundColor(Color.parseColor(ScannerConstants.cropColor));
-        btnClose.setBackgroundColor(Color.parseColor(ScannerConstants.backColor));
         btnImageCrop.setOnClickListener(btnImageEnhanceClick);
         btnClose.setOnClickListener(btnCloseClick);
         ivRotate.setOnClickListener(onRotateClick);
