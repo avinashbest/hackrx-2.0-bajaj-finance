@@ -66,6 +66,7 @@
             android:textStyle="bold" />
 
         <Button
+            android:id="@+id/addRupee"
             android:layout_width="56dp"
             android:layout_height="48dp"
             android:layout_gravity="end"
@@ -128,7 +129,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end|center"
             android:layout_margin="16dp"
-            android:backgroundTint="@color/purple_700"
+            android:backgroundTint="@color/teal_700"
             android:padding="12dp"
             android:text="Verify"
             android:textSize="12sp" />
@@ -185,113 +186,129 @@
             android:rowCount="2">
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/button1"
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_rowWeight="2"
                 android:layout_columnWeight="1"
                 android:layout_margin="16dp"
-                android:backgroundTint="@color/purple_200"
+                android:backgroundTint="#006EB5"
                 app:cornerRadius="100dp"
                 app:icon="@drawable/phone_icon"
                 app:iconGravity="textStart"
                 app:iconPadding="0dp"
-                app:iconSize="40dp" />
+                app:iconSize="32dp"
+                app:iconTint="@color/white" />
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/button2"
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_rowWeight="2"
                 android:layout_columnWeight="1"
                 android:layout_margin="16dp"
-                android:backgroundTint="@color/purple_200"
+                android:backgroundTint="#006EB5"
                 app:cornerRadius="100dp"
                 app:icon="@drawable/business_icon"
                 app:iconGravity="textStart"
                 app:iconPadding="0dp"
-                app:iconSize="40dp" />
+                app:iconSize="32dp"
+                app:iconTint="@color/white" />
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/button3"
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_rowWeight="2"
                 android:layout_columnWeight="1"
                 android:layout_margin="16dp"
-                android:backgroundTint="@color/purple_200"
+                android:backgroundTint="#006EB5"
                 app:cornerRadius="100dp"
                 app:icon="@drawable/car_icon"
                 app:iconGravity="textStart"
                 app:iconPadding="0dp"
-                app:iconSize="40dp" />
+                app:iconSize="32dp"
+                app:iconTint="@color/white" />
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/button4"
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_rowWeight="2"
                 android:layout_columnWeight="1"
                 android:layout_margin="16dp"
-                android:backgroundTint="@color/purple_200"
+                android:backgroundTint="#006EB5"
                 app:cornerRadius="100dp"
                 app:icon="@drawable/train_icon"
                 app:iconGravity="textStart"
                 app:iconPadding="0dp"
-                app:iconSize="40dp" />
+                app:iconSize="32dp"
+                app:iconTint="@color/white" />
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/button5"
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_rowWeight="2"
                 android:layout_columnWeight="1"
                 android:layout_margin="16dp"
-                android:backgroundTint="@color/purple_200"
+                android:backgroundTint="#006EB5"
                 app:cornerRadius="100dp"
                 app:icon="@drawable/flight_icon"
                 app:iconGravity="textStart"
                 app:iconPadding="0dp"
-                app:iconSize="40dp" />
+                app:iconSize="32dp"
+                app:iconTint="@color/white" />
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/button6"
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_rowWeight="2"
                 android:layout_columnWeight="1"
                 android:layout_margin="16dp"
-                android:backgroundTint="@color/purple_200"
+                android:backgroundTint="#006EB5"
                 app:cornerRadius="100dp"
                 app:icon="@drawable/work_icon"
                 app:iconGravity="textStart"
                 app:iconPadding="0dp"
-                app:iconSize="40dp" />
+                app:iconSize="32dp"
+                app:iconTint="@color/white" />
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/button7"
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_rowWeight="2"
                 android:layout_columnWeight="1"
                 android:layout_margin="16dp"
-                android:backgroundTint="@color/purple_200"
+                android:backgroundTint="#006EB5"
                 app:cornerRadius="100dp"
                 app:icon="@drawable/bike_icon"
                 app:iconGravity="textStart"
                 app:iconPadding="0dp"
-                app:iconSize="40dp" />
+                app:iconSize="32dp"
+                app:iconTint="@color/white" />
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/button8"
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_rowWeight="2"
                 android:layout_columnWeight="1"
                 android:layout_margin="16dp"
-                android:backgroundTint="@color/purple_200"
+                android:backgroundTint="#006EB5"
                 android:text="+9"
-                android:textSize="12sp"
+                android:textColor="@color/white"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 app:cornerRadius="100dp"
                 app:iconGravity="textStart" />
