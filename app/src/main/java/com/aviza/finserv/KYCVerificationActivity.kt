@@ -14,14 +14,18 @@ import android.os.StrictMode
 import android.provider.MediaStore
 import android.text.TextUtils
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.aviza.docscanner.ImageCropActivity
 import com.aviza.docscanner.helpers.ScannerConstants
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.ktx.storage
 import kotlinx.android.synthetic.main.activity_kycverification.*
 import java.io.File
+import java.io.FileInputStream
 import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
@@ -29,6 +33,7 @@ import java.util.*
 class KYCVerificationActivity : AppCompatActivity() {
 
     private lateinit var mCurrentPhotoPath: String
+    private var photoFile: File? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -72,7 +77,6 @@ class KYCVerificationActivity : AppCompatActivity() {
         cameraButton.setOnClickListener {
             val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
             if (cameraIntent.resolveActivity(packageManager) != null) {
-                var photoFile: File? = null
                 try {
                     photoFile = createImageFile()
                 } catch (e: IOException) {
@@ -97,7 +101,24 @@ class KYCVerificationActivity : AppCompatActivity() {
                 Toast.makeText(this, "Credentials can't be empty", Toast.LENGTH_LONG).show()
                 return@setOnClickListener
             }
+            uploadingBar.visibility = View.VISIBLE
+            uploadImage()
+        }
+    }
 
+    private fun uploadImage() {
+        val storageRef = Firebase.storage.reference
+        val uniqueID = UUID.randomUUID().toString()
+        val storageReference = storageRef.child(uniqueID)
+        val stream = FileInputStream(photoFile)
+        val uploadTask = storageReference.putStream(stream)
+
+        uploadTask.addOnFailureListener {
+            uploadingBar.visibility = View.GONE
+            Toast.makeText(this, it.toString(), Toast.LENGTH_LONG).show()
+        }.addOnSuccessListener {
+            Toast.makeText(this, "Upload Successful", Toast.LENGTH_LONG).show()
+            uploadingBar.visibility = View.GONE
             val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
             finish()

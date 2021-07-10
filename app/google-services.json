@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "524240683204",
+    "project_id": "aviza---bajaj-finserv",
+    "storage_bucket": "aviza---bajaj-finserv.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:524240683204:android:dfec1bd8c6e0be236d4991",
+        "android_client_info": {
+          "package_name": "com.aviza.finserv"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "524240683204-jkpiq0nre0k85qs24m0ehmq8fapdf2rk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-J-fRcG5rI8xKphlNo4kHwuhsdLc7fgI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "524240683204-jkpiq0nre0k85qs24m0ehmq8fapdf2rk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
