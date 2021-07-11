@@ -9,11 +9,11 @@
 ### Preview:
 
 <p float="left">
-  <img src="preview/preview-4.png" width="123" />
-  <img src="preview/preview-6.jpg" width="120" /> 
-  <img src="preview/preview-5.png" width="123" />
-  <img src="preview/preview-3.jpg" width="120" />
-  <img src="preview/preview-1.jpg" width="120" />
+  <img src="preview/preview-4.png" width="153" />
+  <img src="preview/preview-6.jpg" width="150" /> 
+  <img src="preview/preview-5.png" width="153" />
+  <img src="preview/preview-3.jpg" width="150" />
+  <img src="preview/preview-1.jpg" width="150" />
 </p>
 
 ### Capabilities to include by not limited to:
