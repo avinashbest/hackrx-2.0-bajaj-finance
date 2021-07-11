@@ -6,6 +6,15 @@
 - In our app, users / customers upload various documents images to fulfil KYC / Onboarding / File processing requirements.
 
 - Develop an in-app tool to enhance quality of a document image - clicked, scanned or uploaded from gallery to app.
+### Preview:
+
+<p float="left">
+  <img src="preview/preview-4.png" width="153" />
+  <img src="preview/preview-6.jpg" width="150" /> 
+  <img src="preview/preview-5.png" width="153" />
+  <img src="preview/preview-3.jpg" width="150" />
+  <img src="preview/preview-1.jpg" width="150" />
+</p>
 
 ### Capabilities to include by not limited to:
 
